@@ -49,14 +49,14 @@ function Router() {
   return (
     <Switch>
       <Route path="/auth" component={AuthPage} />
-      <Route path="/" render={() => <ProtectedRoute component={Dashboard} />} />
-      <Route path="/community" render={() => <ProtectedRoute component={Community} />} />
-      <Route path="/marketplace" render={() => <ProtectedRoute component={Marketplace} />} />
-      <Route path="/premium" render={() => <ProtectedRoute component={Premium} />} />
-      <Route path="/profile" render={() => <ProtectedRoute component={Profile} />} />
+      <Route path="/" component={() => <ProtectedRoute component={Dashboard} />} />
+      <Route path="/community" component={() => <ProtectedRoute component={Community} />} />
+      <Route path="/marketplace" component={() => <ProtectedRoute component={Marketplace} />} />
+      <Route path="/premium" component={() => <ProtectedRoute component={Premium} />} />
+      <Route path="/profile" component={() => <ProtectedRoute component={Profile} />} />
       
       {/* Provide an empty project page route to prevent 404 from dashboard links */}
-      <Route path="/projects" render={() => <ProtectedRoute component={Dashboard} />} />
+      <Route path="/projects" component={() => <ProtectedRoute component={Dashboard} />} />
       
       <Route component={NotFound} />
     </Switch>

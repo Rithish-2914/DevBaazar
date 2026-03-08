@@ -5,6 +5,12 @@ import { api } from "@shared/routes";
 import { z } from "zod";
 import session from "express-session";
 
+declare module "express-session" {
+  interface SessionData {
+    userId?: number;
+  }
+}
+
 export async function registerRoutes(
   httpServer: Server,
   app: Express
