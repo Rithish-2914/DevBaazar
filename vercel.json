@@ -1,21 +1,21 @@
 {
   "buildCommand": "npm run build",
   "installCommand": "npm install",
-  "outputDirectory": "dist/public",
   "functions": {
     "api/index.js": {
+      "runtime": "nodejs20.x",
       "memory": 1024,
       "maxDuration": 30
     }
   },
-  "rewrites": [
+  "routes": [
     {
-      "source": "/api/(.*)",
-      "destination": "/api"
+      "src": "/api/(.*)",
+      "dest": "/api"
     },
     {
-      "source": "/((?!api).*)",
-      "destination": "/api"
+      "src": "/(.*)",
+      "dest": "/api"
     }
   ]
 }
