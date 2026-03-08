@@ -2,8 +2,7 @@
   "buildCommand": "npm run build",
   "installCommand": "npm install",
   "functions": {
-    "api/index.js": {
-      "runtime": "nodejs20.x",
+    "dist/api/index.mjs": {
       "memory": 1024,
       "maxDuration": 30
     }
@@ -11,11 +10,11 @@
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/api"
+      "dest": "/dist/api/index.mjs"
     },
     {
       "src": "/(.*)",
-      "dest": "/api"
+      "dest": "/dist/api/index.mjs"
     }
   ]
 }
